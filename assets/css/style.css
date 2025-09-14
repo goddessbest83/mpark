@@ -3,7 +3,7 @@ body {
   background: #fff;
   color: #111;
   font-family: 'Helvetica Neue', Arial, sans-serif;
-  line-height: 1.6;
+  line-height: 1.8;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -25,7 +25,13 @@ header { position: sticky; top:0; z-index:100; width:100%; }
 nav { background:#111; width:100%; }
 nav ul { list-style:none; margin:0; padding:0; text-align:center; }
 nav ul li { display:inline-block; position:relative; margin:0 15px; }
-nav ul li a { color:#fff; font-weight:bold; padding:10px; display:inline-block; }
+nav ul li a {
+  color:#fff;
+  font-weight:bold;
+  padding:10px;
+  display:inline-block;
+  text-decoration: none; /* 언더라인 제거 */
+}
 nav ul li a:hover { color:#ddd; }
 
 /* 드롭다운 */
