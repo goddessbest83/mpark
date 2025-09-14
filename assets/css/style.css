@@ -1,99 +1,23 @@
-/* ==========================
-   기본 레이아웃
-========================== */
+/* 기본 */
 body {
-  background-color: #fff;
+  background: #fff;
   color: #000;
-  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
   line-height: 1.6;
-  max-width: 900px;
+  max-width: 1000px;
   margin: auto;
-  padding: 20px;
-}
-
-/* 문단과 리스트 가독성 */
-p {
-  margin-bottom: 1em;
-}
-
-ul, ol {
-  margin-left: 20px;
-  margin-bottom: 1em;
-}
-
-/* 강조 텍스트 */
-strong {
-  color: #000;
-}
-
-/* ==========================
-   링크
-========================== */
-a {
-  color: #000;
-  text-decoration: underline;
-}
-
-a:hover {
-  color: #555;
-}
-
-/* ==========================
-   제목
-========================== */
-h1, h2, h3 {
-  border-bottom: 2px solid #000;
-  padding-bottom: 5px;
-  margin-top: 1.5em;
-  margin-bottom: 0.5em;
-}
-
-/* 메인 페이지 타이틀 강조 */
-main h1 {
-  font-size: 2.2em;
-  margin-bottom: 0.5em;
-}
-
-main h2 {
-  font-size: 1.5em;
-  margin-bottom: 0.5em;
-}
-
-/* ==========================
-   내비게이션
-========================== */
-nav {
-  background: #000;
-  padding: 10px;
-  text-align: center;
-  position: relative;
-}
-
-nav ul {
-  list-style: none;
-  margin: 0;
   padding: 0;
 }
 
-nav ul li {
-  display: inline-block;
-  position: relative;
-}
+a { color: #000; text-decoration: none; }
+a:hover { color: #555; }
 
-nav a {
-  color: #fff;
-  margin: 0 15px;
-  text-decoration: none;
-  font-weight: bold;
-}
+header { background: #000; padding: 10px 0; }
+nav ul { list-style: none; margin: 0; padding: 0; text-align: center; }
+nav ul li { display: inline-block; position: relative; margin: 0 15px; }
+nav ul li a { color: #fff; font-weight: bold; }
+nav ul li a:hover { color: #ddd; }
 
-nav a:hover {
-  color: #ddd;
-}
-
-/* ==========================
-   드롭다운 메뉴
-========================== */
 nav ul li ul {
   display: none;
   position: absolute;
@@ -103,48 +27,27 @@ nav ul li ul {
   left: 0;
   min-width: 160px;
 }
+nav ul li:hover ul { display: block; }
+nav ul li ul li a:hover { background: #222; padding-left:5px; border-radius:3px; }
 
-nav ul li:hover ul {
-  display: block;
-}
+main { padding: 50px 20px; }
+section { margin-bottom: 60px; padding: 20px; border-radius: 8px; box-shadow: 0 3px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease, opacity 0.5s ease; opacity:0; transform:translateY(20px);}
 
-nav ul li ul li {
-  display: block;
-}
+section.visible { opacity:1; transform:translateY(0); }
 
-nav ul li ul li a {
-  display: block;
-  margin: 5px 0;
-  padding: 2px 5px;
-  border-radius: 3px;
-}
+h1 { font-size: 2.5em; margin-bottom: 0.5em; }
+h2 { font-size: 1.8em; margin-bottom: 0.5em; }
+h3 { font-size: 1.4em; margin-bottom: 0.5em; }
 
-nav ul li ul li a:hover {
-  background-color: #222;
-}
+.card { padding: 20px; margin: 10px 0; background: #f9f9f9; border-left: 4px solid #000; transition: transform 0.3s ease; }
+.card:hover { transform: translateY(-5px); }
 
-/* ==========================
-   푸터
-========================== */
-footer {
-  background: #000;
-  color: #fff;
-  text-align: center;
-  padding: 15px;
-  margin-top: 30px;
-}
+.button { display: inline-block; padding: 10px 20px; border: 2px solid #000; border-radius: 5px; margin-top: 10px; transition: all 0.3s; }
+.button:hover { background: #000; color: #fff; }
 
-/* ==========================
-   반응형 (모바일)
-========================== */
-@media (max-width: 768px) {
-  nav ul li {
-    display: block;
-    margin: 5px 0;
-  }
-  
-  nav ul li ul {
-    position: static;
-    padding-left: 20px;
-  }
+footer { background: #000; color: #fff; text-align: center; padding: 20px; }
+
+@media(max-width:768px){
+  nav ul li { display:block; margin:5px 0; }
+  nav ul li ul { position: static; padding-left:20px; }
 }
