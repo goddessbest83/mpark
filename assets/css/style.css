@@ -1,27 +1,28 @@
-/* 기본 블랙&화이트 테마 */
+/* 전체 폭 적용 */
 body {
   background: #fff;
   color: #111;
   font-family: 'Helvetica Neue', Arial, sans-serif;
   line-height: 1.6;
-  max-width: 1000px;
-  margin: auto;
+  width: 100%;
+  margin: 0;
   padding: 0;
 }
 
 /* 헤더 & 배너 */
-header { position: sticky; top:0; z-index:100; }
+header { position: sticky; top:0; z-index:100; width:100%; }
 .banner {
   background: #000;
   color: #fff;
   text-align: center;
   padding: 50px 20px;
+  width:100%;
 }
 .banner h1 { font-size: 3em; margin-bottom:10px; }
 .banner p { font-size:1.2em; opacity:0.8; }
 
 /* 네비게이션 */
-nav { background:#111; }
+nav { background:#111; width:100%; }
 nav ul { list-style:none; margin:0; padding:0; text-align:center; }
 nav ul li { display:inline-block; position:relative; margin:0 15px; }
 nav ul li a { color:#fff; font-weight:bold; padding:10px; display:inline-block; }
@@ -42,7 +43,7 @@ nav ul li .submenu li a { padding:5px 10px; display:block; }
 nav ul li .submenu li a:hover { background:#222; border-radius:3px; }
 
 /* 메인 섹션 */
-main { padding:50px 20px; }
+main { padding:50px 20px; width:100%; box-sizing:border-box; }
 section {
   margin-bottom:60px;
   padding:30px;
@@ -52,6 +53,10 @@ section {
   opacity:0;
   transform:translateY(20px);
   transition:all 0.6s ease;
+  width:90%;
+  max-width:1000px;
+  margin-left:auto;
+  margin-right:auto;
 }
 section.visible { opacity:1; transform:translateY(0); }
 

@@ -1,4 +1,4 @@
-// Scroll animation
+// Scroll animation + Blog menu 개선
 document.addEventListener('DOMContentLoaded', function(){
   const sections = document.querySelectorAll('section');
   const observer = new IntersectionObserver(entries => {
