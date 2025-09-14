@@ -1,7 +1,7 @@
-/* 기본 */
+/* 기본 블랙&화이트 테마 */
 body {
   background: #fff;
-  color: #000;
+  color: #111;
   font-family: 'Helvetica Neue', Arial, sans-serif;
   line-height: 1.6;
   max-width: 1000px;
@@ -9,45 +9,65 @@ body {
   padding: 0;
 }
 
-a { color: #000; text-decoration: none; }
-a:hover { color: #555; }
-
-header { background: #000; padding: 10px 0; }
-nav ul { list-style: none; margin: 0; padding: 0; text-align: center; }
-nav ul li { display: inline-block; position: relative; margin: 0 15px; }
-nav ul li a { color: #fff; font-weight: bold; }
-nav ul li a:hover { color: #ddd; }
-
-nav ul li ul {
-  display: none;
-  position: absolute;
+/* 헤더 & 배너 */
+header { position: sticky; top:0; z-index:100; }
+.banner {
   background: #000;
-  padding: 10px;
-  top: 35px;
-  left: 0;
-  min-width: 160px;
+  color: #fff;
+  text-align: center;
+  padding: 50px 20px;
 }
-nav ul li:hover ul { display: block; }
-nav ul li ul li a:hover { background: #222; padding-left:5px; border-radius:3px; }
+.banner h1 { font-size: 3em; margin-bottom:10px; }
+.banner p { font-size:1.2em; opacity:0.8; }
 
-main { padding: 50px 20px; }
-section { margin-bottom: 60px; padding: 20px; border-radius: 8px; box-shadow: 0 3px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease, opacity 0.5s ease; opacity:0; transform:translateY(20px);}
+/* 네비게이션 */
+nav { background:#111; }
+nav ul { list-style:none; margin:0; padding:0; text-align:center; }
+nav ul li { display:inline-block; position:relative; margin:0 15px; }
+nav ul li a { color:#fff; font-weight:bold; padding:10px; display:inline-block; }
+nav ul li a:hover { color:#ddd; }
 
+/* 드롭다운 */
+nav ul li .submenu {
+  display:none;
+  position:absolute;
+  background:#111;
+  padding:10px;
+  top:100%;
+  left:0;
+  min-width:160px;
+}
+nav ul li .submenu li { display:block; }
+nav ul li .submenu li a { padding:5px 10px; display:block; }
+nav ul li .submenu li a:hover { background:#222; border-radius:3px; }
+
+/* 메인 섹션 */
+main { padding:50px 20px; }
+section {
+  margin-bottom:60px;
+  padding:30px;
+  border-radius:10px;
+  background:#f9f9f9;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+  opacity:0;
+  transform:translateY(20px);
+  transition:all 0.6s ease;
+}
 section.visible { opacity:1; transform:translateY(0); }
 
-h1 { font-size: 2.5em; margin-bottom: 0.5em; }
-h2 { font-size: 1.8em; margin-bottom: 0.5em; }
-h3 { font-size: 1.4em; margin-bottom: 0.5em; }
+/* 카드 */
+.card { padding:20px; margin:10px 0; background:#fff; border-left:5px solid #000; transition:transform 0.3s ease; }
+.card:hover { transform:translateY(-5px); }
 
-.card { padding: 20px; margin: 10px 0; background: #f9f9f9; border-left: 4px solid #000; transition: transform 0.3s ease; }
-.card:hover { transform: translateY(-5px); }
+/* 버튼 */
+.button { display:inline-block; padding:10px 20px; border:2px solid #000; border-radius:5px; margin-top:10px; transition:all 0.3s; }
+.button:hover { background:#000; color:#fff; }
 
-.button { display: inline-block; padding: 10px 20px; border: 2px solid #000; border-radius: 5px; margin-top: 10px; transition: all 0.3s; }
-.button:hover { background: #000; color: #fff; }
+/* 푸터 */
+footer { background:#000; color:#fff; text-align:center; padding:20px; margin-top:30px; }
 
-footer { background: #000; color: #fff; text-align: center; padding: 20px; }
-
+/* 반응형 */
 @media(max-width:768px){
   nav ul li { display:block; margin:5px 0; }
-  nav ul li ul { position: static; padding-left:20px; }
+  nav ul li .submenu { position:static; padding-left:20px; }
 }
