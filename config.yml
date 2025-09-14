@@ -1,0 +1,21 @@
+title: "Mpark Portfolio"
+description: "QA Engineer · Automation · Portfolio"
+theme: jekyll-theme-minimal
+
+# 내비게이션 메뉴 (커스텀 CSS/JS로 드롭다운 구현)
+nav:
+  - name: "Home"
+    link: "/"
+  - name: "Me"
+    link: "/me"
+  - name: "Skills"
+    link: "/skills"
+  - name: "Services"
+    link: "/services"
+  - name: "Blog"
+    link: "/blog/"
+  - name: "Contact"
+    link: "/contact"
+
+include:
+  - assets/css
