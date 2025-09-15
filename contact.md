@@ -11,7 +11,6 @@ title: Contact
 
   <ul>
     <li>Email: mpark@example.com</li>
-    <li>GitHub: <a href="https://github.com/goddessbest83" target="_blank">github.com/goddessbest83</a></li>
     <li>LinkedIn: <a href="https://www.linkedin.com/in/maxpark" target="_blank">linkedin.com/in/maxpark</a></li>
   </ul>
 </section>
