@@ -3,10 +3,15 @@ layout: default
 title: Contact
 ---
 
-<section>
-# Contact
+<section class="contact">
+  <h1>Contact</h1>
 
-📧 이메일: [youremail@example.com](mailto:youremail@example.com)  
-💼 LinkedIn: [linkedin.com/in/yourprofile](https://linkedin.com/in/yourprofile)  
-🐙 GitHub: [goddessbest83](https://github.com/goddessbest83)
+  <p>문의나 협업 요청은 아래 방법으로 연락 가능합니다.</p>
+  <p>For inquiries or collaboration requests, you can contact me using the following:</p>
+
+  <ul>
+    <li>Email: mpark@example.com</li>
+    <li>GitHub: <a href="https://github.com/goddessbest83" target="_blank">github.com/goddessbest83</a></li>
+    <li>LinkedIn: <a href="https://www.linkedin.com/in/maxpark" target="_blank">linkedin.com/in/maxpark</a></li>
+  </ul>
 </section>

@@ -1,33 +1,15 @@
-/* 기본 레이아웃 */
+/* ===== 기본 리셋 및 공통 스타일 ===== */
 body {
-  background-color: #fff;
-  color: #000;
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  line-height: 1.6;
-  max-width: 100%;
   margin: 0;
   padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  max-width: 100%;
   overflow-x: hidden;
+  line-height: 1.6;
 }
 
-/* 메인 콘텐츠 영역 padding */
-main {
-  padding: 60px 20px;
-}
-
-/* 섹션마다 간격 + 스크롤 fade-in */
-section, .home-content, .skill-item, .about-section, .skills-section, .home-profile {
-  margin-bottom: 60px;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s ease-out;
-}
-section.visible, .home-content.visible, .skill-item.visible, .about-section.visible, .skills-section.visible, .home-profile.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* 링크 스타일 */
 a {
   color: inherit;
   text-decoration: none;
@@ -37,12 +19,11 @@ a:hover {
   color: #555;
 }
 
-/* 제목 스타일 */
 h1, h2, h3 {
   margin-bottom: 20px;
 }
 
-/* 네비게이션 */
+/* ===== 네비게이션 ===== */
 nav {
   background: #000;
   padding: 10px 20px;
@@ -83,7 +64,7 @@ nav a {
   display: block;
 }
 
-/* 푸터 */
+/* ===== 푸터 ===== */
 footer {
   background: #000;
   color: #fff;
@@ -91,7 +72,7 @@ footer {
   padding: 20px;
 }
 
-/* 홈 배너 */
+/* ===== 메인 배너 / 홈 ===== */
 .hero {
   display: flex;
   flex-direction: column;
@@ -102,12 +83,8 @@ footer {
   background: #f7f7f7;
   animation: fadeIn 1.5s ease-out;
 }
-@keyframes fadeIn {
-  0% { opacity: 0; transform: translateY(-20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
 
-/* 홈 프로필 이미지 */
+/* ===== 홈 프로필 ===== */
 .home-profile {
   text-align: center;
   margin-top: 40px;
@@ -120,15 +97,44 @@ footer {
   display: block;
   margin: 0 auto 20px;
   border: 3px solid #ddd;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.linkedin-profile:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
-/* Skills / About 항목 fade-in */
-.skill-item {
+/* ===== 홈 콘텐츠 ===== */
+.home-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+.home-content h1 {
+  font-size: 2.2em;
+  margin-bottom: 20px;
+}
+.home-content p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* ===== 섹션 공통 (fade-in 적용) ===== */
+section {
+  margin-bottom: 60px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== 스킬 / 서비스 / 컨택 아이템 ===== */
+.skill-item, .service-item, .contact-item {
   margin-bottom: 40px;
+}
+
+/* ===== 홈 fade-in keyframes ===== */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
