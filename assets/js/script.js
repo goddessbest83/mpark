@@ -1,32 +1,19 @@
-// Blog 드롭다운
-const navItems = document.querySelectorAll('nav ul li');
-navItems.forEach(item => {
-  const dropdown = item.querySelector('ul');
-  if(!dropdown) return;
-  item.addEventListener('mouseenter', () => { dropdown.style.display = 'block'; });
-  item.addEventListener('mouseleave', () => { dropdown.style.display = 'none'; });
-});
+// 스크롤 시 fade-in 적용
+document.addEventListener("DOMContentLoaded", function() {
+  const observerOptions = { threshold: 0.1 };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, observerOptions);
 
-// 스크롤 애니메이션
-const sections = document.querySelectorAll('section');
-function checkSections() {
-  const triggerBottom = window.innerHeight / 5 * 4;
-  sections.forEach(section => {
-    const sectionTop = section.getBoundingClientRect().top;
-    if(sectionTop < triggerBottom) section.classList.add('visible');
-  });
-}
-window.addEventListener('scroll', checkSections);
-window.addEventListener('load', checkSections);
+  // 프로필 이미지
+  const homeProfile = document.querySelector('.home-profile');
+  if (homeProfile) observer.observe(homeProfile);
 
-// 부드러운 스크롤
-document.querySelectorAll('a[href^="#"], a[href$=".html"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    const href = this.getAttribute('href');
-    if(href.startsWith("#")) {
-      e.preventDefault();
-      const target = document.querySelector(href);
-      if(target) target.scrollIntoView({ behavior: 'smooth' });
-    }
-  });
+  // 모든 섹션 및 fade-in 요소
+  const fadeElements = document.querySelectorAll('section, .home-content, .skill-item, .about-section, .skills-section');
+  fadeElements.forEach(el => observer.observe(el));
 });
