@@ -3,18 +3,25 @@ layout: default
 title: About Me
 ---
 
-<section style="background-color:#f0f0f0; min-height:80vh;">
-  <h1>About Mpark / Mpark 소개</h1>
-  <p>
-    Hello! I'm Max Park (Mpark), a QA Engineer with 15+ years experience.<br>
-    안녕하세요! 저는 15년 이상의 경력을 가진 QA 엔지니어 Max Park(Mpark)입니다.<br>
-    I specialize in building and maintaining test automation frameworks for APP, API, and WEB.<br>
-    APP, API, WEB 테스트 자동화 프레임워크를 구축하고 유지하는 일을 전문으로 합니다.<br>
-    I have hands-on experience across multiple domains: games, mobility, fintech, e-commerce.<br>
-    게임, 모빌리티, 핀테크, 이커머스 등 다양한 도메인에서 실무 경험이 있습니다.<br>
-    I enjoy mentoring QA teams and helping members grow professionally.<br>
-    QA 팀을 멘토링하고 팀원의 성장을 돕는 것을 즐깁니다.<br>
-    I also run a weekly QA article called 'QA Weekly' which has surpassed 160 issues.<br>
-    매주 'QA Weekly'라는 주간 QA 아티클을 작성하며, 현재 160회를 넘겼습니다.
-  </p>
+<section class="about-section">
+  <h1>About Me</h1>
+  <p>저는 15년 이상 다양한 도메인에서 QA 업무를 경험해온 <strong>QA Engineer</strong>입니다.</p>
+  <p>게임, 모빌리티, 핀테크, 이커머스 등 폭넓은 분야에서 <strong>Manual Test와 Test Automation</strong> 모두 수행하며, 신규 QA 팀을 셋업하고 팀의 성장을 이끌어온 경험을 가지고 있습니다.</p>
+
+  <h2>주요 경력</h2>
+  <ul class="skill-item">
+    <li>PC & Mobile Game QA</li>
+    <li>Android / iOS QA</li>
+    <li>Web QA (PC & Mobile)</li>
+    <li>Test Automation Framework 구축 및 운영</li>
+    <li>QA 팀 리딩 & 멘토링</li>
+  </ul>
+
+  <h2>특징</h2>
+  <ul class="skill-item">
+    <li>자동화와 수동 테스트 모두 균형 있게 수행</li>
+    <li>신규 QA팀 설계 및 운영 경험</li>
+    <li>꾸준한 성장: <strong>주간 QA Weekly</strong> 160회 이상 발행</li>
+    <li>QA Korea Conference 2023 강연 경험</li>
+  </ul>
 </section>
