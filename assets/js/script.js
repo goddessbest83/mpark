@@ -1,41 +1,53 @@
-// Scroll animation + Blog menu 개선 + GSAP 애니메이션 + 부드러운 스크롤
-document.addEventListener('DOMContentLoaded', function(){
-  // 스크롤 시 section 애니메이션
-  const sections = document.querySelectorAll('section');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){ entry.target.classList.add('visible'); }
-    });
-  }, { threshold:0.1 });
-  sections.forEach(section => observer.observe(section));
+// ==============================
+// Blog 드롭다운 메뉴 제어
+// ==============================
+const navItems = document.querySelectorAll('nav ul li');
 
-  // Blog 메뉴 hover with delay
-  const blogMenu = document.querySelector('.has-submenu');
-  const submenu = blogMenu.querySelector('.submenu');
-  let timer;
-  blogMenu.addEventListener('mouseenter', ()=>{
-    clearTimeout(timer);
-    submenu.style.display='block';
-  });
-  blogMenu.addEventListener('mouseleave', ()=>{
-    timer = setTimeout(()=>{ submenu.style.display='none'; }, 300);
+navItems.forEach(item => {
+  const dropdown = item.querySelector('ul');
+  if(!dropdown) return;
+
+  // 마우스 들어오면 드롭다운 표시
+  item.addEventListener('mouseenter', () => {
+    dropdown.style.display = 'block';
   });
 
-  // GSAP 배너 애니메이션
-  gsap.from(".banner h1", { y:-50, opacity:0, duration:1 });
-  gsap.from(".banner p", { y:50, opacity:0, duration:1, delay:0.3 });
+  // 마우스 나가면 드롭다운 숨기기
+  item.addEventListener('mouseleave', () => {
+    dropdown.style.display = 'none';
+  });
+});
 
-  // 부드러운 스크롤
-  document.querySelectorAll('nav a').forEach(link => {
-    link.addEventListener('click', e => {
+// ==============================
+// 스크롤 시 섹션 애니메이션
+// ==============================
+const sections = document.querySelectorAll('section');
+
+function checkSections() {
+  const triggerBottom = window.innerHeight / 5 * 4; // 화면 아래 80% 지점
+  sections.forEach(section => {
+    const sectionTop = section.getBoundingClientRect().top;
+    if(sectionTop < triggerBottom) {
+      section.classList.add('visible');
+    }
+  });
+}
+
+window.addEventListener('scroll', checkSections);
+window.addEventListener('load', checkSections);
+
+// ==============================
+// 부드러운 스크롤 (옵션)
+// ==============================
+document.querySelectorAll('a[href^="#"], a[href$=".html"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    const href = this.getAttribute('href');
+
+    // 내부 섹션 링크면 스크롤 부드럽게
+    if(href.startsWith("#")) {
       e.preventDefault();
-      const href = link.getAttribute('href');
       const target = document.querySelector(href);
-      if(target){
-        target.scrollIntoView({ behavior: 'smooth' });
-      } else {
-        window.location.href = href; // 페이지 이동
-      }
-    });
+      if(target) target.scrollIntoView({ behavior: 'smooth' });
+    }
   });
 });
