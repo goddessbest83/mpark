@@ -1,14 +1,15 @@
-document.addEventListener("DOMContentLoaded", function() {
-  const observerOptions = { threshold: 0.1 };
+document.addEventListener('DOMContentLoaded', () => {
+  const sections = document.querySelectorAll('section');
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
+      if(entry.isIntersecting){
         entry.target.classList.add('visible');
       }
     });
-  }, observerOptions);
+  }, { threshold: 0.2 });
 
-  // 모든 섹션 및 fade-in 요소
-  const fadeElements = document.querySelectorAll('section, .home-content, .skill-item, .service-item, .contact-item');
-  fadeElements.forEach(el => observer.observe(el));
+  sections.forEach(section => {
+    observer.observe(section);
+  });
 });
